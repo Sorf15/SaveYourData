@@ -1,0 +1,59 @@
+.BorderPane {
+	-fx-background-color: linear-gradient(to bottom left, #2E2E70, #1C1C2C);
+}
+
+.button {
+	-fx-background-radius: 10;
+}
+
+#hidePassButton {
+	-fx-background-color: rgba(0,0,0,0);
+}
+
+.fieldBack {
+	-fx-background-color: /*#7c81a1*/rgba(0,0,0,0);
+	-fx-prompt-text-fill: #3c3c3c;
+}
+
+#actionButton {
+	-fx-background-color: #37395b;
+	-fx-text-fill : #c3c0c0;
+}
+
+#actionButton:hover {
+	-fx-background-color : #404263;
+}
+
+#actionButton:pressed {
+	-fx-background-color : #4f516e;
+}
+
+#switchScreen {
+	-fx-background-color: rgba(94,97,145,0);
+	-fx-text-fill : #c3c0c0;
+}
+
+#switchScreen:hover {
+	-fx-background-color : rgba(94,97,145,0.5);
+}
+
+#switchScreen:pressed {
+	-fx-background-color : rgba(94,97,145,1);
+}
+
+.check-box .box {
+	-fx-background-color: #7c81a1;
+}
+
+.check-box:selected .mark {
+	-fx-background-color: #ffffff;
+}
+
+#outsideLabel {
+	-fx-text-fill: #c3c0c0;
+}
+
+#inputHBox {
+	-fx-background-color: #7c81a1;
+	-fx-background-radius: 10;
+}

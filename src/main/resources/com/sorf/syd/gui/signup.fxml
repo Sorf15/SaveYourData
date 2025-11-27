@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene fx:id="scene" stylesheets="@FXMLControllers/signin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.ContSignUp">
+   <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="BorderPane">
+      <center>
+         <VBox fx:id="vbox" alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+               <Label id="outsideLabel" fx:id="lSignIn" text="Sign Up!" textAlignment="CENTER" textFill="#c3c0c0">
+                  <font>
+                     <Font name="System Bold" size="30.0" />
+                  </font>
+               </Label>
+               <HBox id="inputHBox">
+                  <children>
+                     <ImageView fx:id="ivLogin" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" scaleX="0.85" scaleY="0.85" HBox.hgrow="NEVER" />
+                     <TextField fx:id="tfLogIn" promptText="Username" styleClass="fieldBack" HBox.hgrow="ALWAYS">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </TextField>
+                  </children>
+                  <padding>
+                     <Insets left="8.0" />
+                  </padding>
+               </HBox>
+               <HBox id="inputHBox">
+                  <children>
+                     <ImageView fx:id="ivPass" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" scaleX="0.85" scaleY="0.85" />
+                     <PasswordField fx:id="passwordField" prefWidth="196.0" promptText="Password" styleClass="fieldBack" HBox.hgrow="ALWAYS">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </PasswordField>
+                  </children>
+                  <padding>
+                     <Insets left="8.0" />
+                  </padding>
+               </HBox>
+               <HBox id="inputHBox" layoutX="20.0" layoutY="365.0">
+                  <children>
+                     <ImageView fx:id="ivPass1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" scaleX="0.85" scaleY="0.85" />
+                     <PasswordField fx:id="passwordField1" prefWidth="196.0" promptText="Repeat Pass" styleClass="fieldBack" HBox.hgrow="ALWAYS">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </PasswordField>
+                  </children>
+                  <padding>
+                     <Insets left="8.0" />
+                  </padding>
+               </HBox>
+               <HBox fx:id="hbox" alignment="CENTER_RIGHT" VBox.vgrow="NEVER">
+                  <children>
+                     <CheckBox fx:id="checkbox" mnemonicParsing="false" text="Keep Logged in" textFill="#9e9e9e" HBox.hgrow="NEVER" />
+                  </children>
+                  <padding>
+                     <Insets top="-10.0" />
+                  </padding>
+               </HBox>
+               <Label fx:id="lWrongInput" text="Wrong Login or Password!" textFill="#8d0202" visible="false">
+                  <VBox.margin>
+                     <Insets bottom="5.0" top="-5.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Label>
+               <Button id="actionButton" fx:id="actionButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionButton" prefWidth="300.0" text="Sign up" textAlignment="CENTER" textFill="#c3c0c0" textOverrun="CLIP" VBox.vgrow="ALWAYS">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font>
+               </Button>
+               <HBox alignment="CENTER">
+                  <children>
+                     <Label id="outsideLabel" text="Already have an account?" />
+                     <Button id="switchScreen" fx:id="switchScreen" mnemonicParsing="false" onAction="#buttonSwitchScreen" text="Sign in" textFill="#f50000" underline="true">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <BorderPane.margin>
+               <Insets />
+            </BorderPane.margin>
+         </VBox>
+      </center>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <padding>
+         <Insets left="500.0" right="500.0" />
+      </padding>
+   </BorderPane>
+</Scene>

@@ -1,0 +1,58 @@
+package com.sorf.syd.gui;
+
+import com.dustinredmond.fxtrayicon.FXTrayIcon;
+import com.sorf.syd.Main;
+import com.sorf.syd.util.Logger;
+import javafx.scene.control.MenuItem;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.io.File;
+
+public class TrayIcon extends FXTrayIcon {
+    private final static MenuItem hide;
+    private final static MenuItem show;
+    private final static MenuItem exit;
+
+    //FIX THIS STUPID SHIT!!! (3 right-click or 1 left and 1 right)
+    //TODO: timing issue?
+    // still not fixed
+    static {
+        exit = new MenuItem("Exit");
+        exit.setOnAction(e -> Main.addScheduledTask(Main::setStopped));
+
+        show = new MenuItem("Show App");
+        show.setOnAction(e -> MainController.showStage());
+
+        hide = new MenuItem("Hide App");
+        hide.setOnAction(e -> MainController.hideStage());
+
+
+    }
+
+    public TrayIcon(Stage stage, File icon) {
+        super(stage, icon);
+        this.show();
+        SwingUtilities.invokeLater(() -> this.addMenuItem(hide));
+        SwingUtilities.invokeLater(() -> this.addMenuItem(exit));
+        SwingUtilities.invokeLater(() -> this.setOnAction(e -> MainController.showStage()));
+
+        Logger.info("TrayIcon elements: %d", this.getMenuItemCount());
+    }
+
+    protected void stageShown() {
+        SwingUtilities.invokeLater(() -> this.removeMenuItem(0));
+        SwingUtilities.invokeLater(() -> this.insertMenuItem(hide, 0));
+    }
+
+    protected void stageHidden() {
+        SwingUtilities.invokeLater(() -> this.removeMenuItem(0));
+        SwingUtilities.invokeLater(() -> this.insertMenuItem(show, 0));
+    }
+
+    protected void terminate() {
+        SwingUtilities.invokeLater(this::clear);
+        this.hide();
+        Logger.debug("Terminating TrayIcon");
+    }
+}

@@ -1,0 +1,23 @@
+#anchorpane1 {
+	-fx-background-color: linear-gradient(to bottom left, #2E2E70, #1C1C2C);
+}
+
+.fieldBack {
+	-fx-background-color: #7c81a1;
+}
+
+.button {
+	-fx-background-color: #37395b;	
+}
+
+.button:hover {
+	-fx-background-color : #404263;
+}
+
+.button:pressed {
+	-fx-background-color : #4f516e;
+}
+
+#actionButton {
+	-fx-background-color: #7c81a1;
+}

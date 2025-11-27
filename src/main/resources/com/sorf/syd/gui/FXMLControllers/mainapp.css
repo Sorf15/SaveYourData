@@ -1,0 +1,64 @@
+.split-pane *.split-pane-divider {
+   -fx-padding: 0 1 0 1;
+   -fx-background-color: #161d34;
+}
+
+
+#bSide:focused {
+   -fx-border-color: #a6a6a6;
+   -fx-border-width: 2;
+   -fx-border-radius: 15;
+}
+
+#bSide:hover {
+   -fx-background-color: #2c2d4d;
+   -fx-background-radius: 15;
+}
+
+#bSide:pressed {
+   -fx-background-color: #52537a;
+}
+
+#bSide:selected {
+   -fx-background-color: #3e64ff;
+   -fx-background-radius: 15;
+}
+
+#bSide {
+    -fx-background-color: rgb(0,0,0,0);
+    -fx-background-radius: 20;
+}
+
+#bAccount {
+   -fx-background-color: rgb(219, 219, 219);
+    -fx-background-radius: 25;
+}
+
+#bNotification {
+   -fx-background-color: rgb(0,0,0,0);
+}
+
+#bPremium {
+   -fx-background-color: rgb(62,100,255);
+   -fx-background-radius: 30;
+}
+
+/*#bMoreInfo:focused {
+   -fx-border-color: #a6a6a6;
+   -fx-border-width: 2;
+   -fx-border-radius: 10;
+}*/
+
+/** {
+   -fx-border-style: dotted;
+   -fx-border-radius: 4;
+   fx-border-color: #ffffff;
+}*/
+
+#borderPane {
+   -fx-background-color: #161d34;
+}
+
+#rightAP {
+   -fx-background-color: #182039;
+}  

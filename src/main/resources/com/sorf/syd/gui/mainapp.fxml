@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene fx:id="scene" stylesheets="@FXMLControllers/mainapp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.ContMainScreen">
+   <root>
+      <SplitPane fx:id="sp" dividerPositions="0.075" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #212336;">
+        <items>
+            <BorderPane fx:id="borderPane">
+               <top>
+                  <VBox fx:id="leftVbox" alignment="TOP_CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fx:id="ivLogo" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:resources/pBNWym3Cg3mQ33JG09mAV9WCKyrOxyVF" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button id="bSide" fx:id="bHome" minHeight="1.0" minWidth="1.0" mnemonicParsing="false" onAction="#bHome" prefHeight="56.0" prefWidth="56.0" VBox.vgrow="NEVER">
+                           <graphic>
+                              <ImageView fx:id="ivHome" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/moGLqB9GEpG19idJs2GgiaZUxcwSn0nN" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button id="bSide" fx:id="bManage" mnemonicParsing="false" onAction="#bManage" prefHeight="56.0" prefWidth="56.0" VBox.vgrow="NEVER">
+                           <graphic>
+                              <ImageView fx:id="ivManage" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/xSuUYv14Truf2h5MIK560987sYrHCliR" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button id="bSide" fx:id="bGenerator" mnemonicParsing="false" onAction="#bGenerator" prefHeight="56.0" prefWidth="56.0" VBox.vgrow="NEVER">
+                           <graphic>
+                              <ImageView fx:id="ivGenerator" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/GdJpL25Xvs950h9bjPDCXuR2cjE2nohF" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button id="bSide" fx:id="bWiFi" layoutX="96.0" layoutY="302.0" mnemonicParsing="false" onAction="#bWiFi" prefHeight="56.0" prefWidth="56.0">
+                           <graphic>
+                              <ImageView fx:id="ivWiFi" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/NwwjaL9GwqC7RjkYlC4YJ4qz8F398zjh" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button id="bSide" fx:id="bDocs" layoutX="96.0" layoutY="302.0" mnemonicParsing="false" onAction="#bDocs" prefHeight="56.0" prefWidth="56.0">
+                           <graphic>
+                              <ImageView fx:id="ivDocs" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/IdxBIYA7TnqvLyy9Yfh3R7PuvnmixwJY" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button id="bSide" fx:id="bSettings" mnemonicParsing="false" onAction="#bSettings" prefHeight="56.0" prefWidth="56.0">
+                           <graphic>
+                              <ImageView fx:id="ivSettings" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/7wDlFxr8sqr1jTx2ckza36ky3guS9kML" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </top>
+            </BorderPane>
+            <BorderPane fx:id="rightBP">
+               <top>
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER_RIGHT">
+                     <children>
+                        <Button id="bPremium" mnemonicParsing="false" text="Buy Premium" textFill="#ebebeb">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+                           </padding>
+                        </Button>
+                        <Button id="bNotification" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0">
+                           <graphic>
+                              <ImageView fx:id="ivNotification" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/Gf9BfWmIIo5VBliOl7eIQgFUknNbN3n5" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button id="bAccount" fx:id="bAccount" mnemonicParsing="false" onAction="#bAccount" prefHeight="48.0" prefWidth="48.0" HBox.hgrow="NEVER">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:resources/Q9Ut5SMy93KlilxvNXRQK6hLqQsmh549" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets right="50.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+            </BorderPane>
+        </items>
+      </SplitPane>
+   </root>
+</Scene>
