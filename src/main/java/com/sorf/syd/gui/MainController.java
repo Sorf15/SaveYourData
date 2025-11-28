@@ -49,6 +49,7 @@ public class MainController extends Application implements Runnable {
     public static DialogPane dEditPass;
     public static DialogPane dSelectColumn;
     public static DialogPane dEditAccPass;
+    public static DialogPane dConfirm;
 
     public static @NotNull HashMap<String, FXMLController> controllers = new HashMap<>();
 
@@ -87,6 +88,7 @@ public class MainController extends Application implements Runnable {
             dSelectColumn = loadFXML("dSelectColumn", "dialogImportPass.fxml");
             dEditAccPass = loadFXML("dEditAccPass", "dialogEditAccPass.fxml");
             lorem = loadFXML("lorem", "lorem.fxml");
+            dConfirm = loadFXML("dConfirm", "dialogConfirmation.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }

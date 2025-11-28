@@ -4,6 +4,7 @@ import com.opencsv.CSVReader;
 import com.sorf.syd.Main;
 import com.sorf.syd.gui.MainController;
 import com.sorf.syd.gui.ShadowPassword;
+import com.sorf.syd.gui.dialog.DialogConfirmation;
 import com.sorf.syd.gui.dialog.DialogImportPass;
 import com.sorf.syd.util.ExportPass;
 import com.sorf.syd.util.Logger;
@@ -178,11 +179,14 @@ public class ContManage extends FXMLController{
         })));
     }
 
-    //TODO: Confirm Delete
     @FXML
     public void bDel() {
+        if (selectedPass.isEmpty()) return;
+        DialogConfirmation dialog = new DialogConfirmation("Are you sure that you want to delete " + selectedPass.size() + " passwords?");
+        Optional<Boolean> result = dialog.showAndWait();
+        if (!result.orElse(false)) return;
         List<UUID> passToDel = selectedPass.stream().map(ShadowPassword::getUuid).toList();
-        if (!passToDel.isEmpty()) Main.addScheduledTask(() -> {
+        Main.addScheduledTask(() -> {
             Main.removePassFromStorage(passToDel);
         });
     }
