@@ -15,6 +15,7 @@ out
 build
 .gradle
 src/test
+data/user_data
 
 run
 

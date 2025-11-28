@@ -255,4 +255,14 @@ public class ContMainScreen extends FXMLController {
     public void bDocs() {
         Main.EVENT_BUS.fire(new UpdateScreenEvent(UpdateScreenEvent.State.DOCS, UpdateScreenEvent.Destination.MAIN_APP));
     }
+
+    @FXML
+    public void bPremium() {
+        new Alert(Alert.AlertType.INFORMATION, "Not Implemented", ButtonType.CLOSE).show();
+    }
+
+    @FXML
+    public void bNotification() {
+        new Alert(Alert.AlertType.INFORMATION, "Not Implemented", ButtonType.CLOSE).show();
+    }
 }

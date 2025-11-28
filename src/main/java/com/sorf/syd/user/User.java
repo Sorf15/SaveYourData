@@ -154,7 +154,8 @@ public class User {
     public void addPassToStorage(@NotNull String name, @NotNull String login, @NotNull String pass) {
         try {
             this.passwordStorage.addPass(name, login, pass, this.storageKey.getPublicKey());
-        } catch (InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException | InvalidKeySpecException e) {
+            this.fileManager.write();
+        } catch (InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException | InvalidKeySpecException | IOException e) {
             //TODO: make proper exception
             e.printStackTrace();
         }
@@ -163,7 +164,8 @@ public class User {
     public void addPassToStorage(String @NotNull [] name, String @NotNull [] login, String @NotNull [] pass) {
         try {
             this.passwordStorage.addPass(name, login, pass, this.storageKey.getPublicKey());
-        } catch (InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException | InvalidKeySpecException e) {
+            this.fileManager.write();
+        } catch (InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException | InvalidKeySpecException | IOException e) {
             //TODO: make proper exception
             e.printStackTrace();
         }
@@ -171,16 +173,27 @@ public class User {
 
     public void removePassFromStorage(@NotNull UUID uuid) {
         this.passwordStorage.removePass(uuid);
+        try {
+            this.fileManager.write();
+        } catch (IOException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException e) {
+            e.printStackTrace();
+        }
     }
 
     public void removePassFromStorage(@NotNull List<UUID> uuid) {
         this.passwordStorage.removePass(uuid);
+        try {
+            this.fileManager.write();
+        } catch (IOException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException e) {
+            e.printStackTrace();
+        }
     }
 
     public void editPass(@NotNull UUID uuid, @NotNull String name, @NotNull String login, @NotNull String pass) {
         try {
             this.passwordStorage.editPass(uuid, name, login, pass, this.storageKey.getPublicKey());
-        } catch (InvalidKeySpecException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException e) {
+            this.fileManager.write();
+        } catch (InvalidKeySpecException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException | InvalidKeyException | IOException e) {
             //TODO: make proper exception
             e.printStackTrace();
         }
@@ -205,10 +218,11 @@ public class User {
             this.storageKey.changePrivateKey(this.hash512, newHash512);
             this.passwordStorage.updateKey(HashUtil.getSHA256(newPass));
             this.fileManager.updateKey(HashUtil.getSHA256(newPass));
+            this.fileManager.write();
 
             this.hash512 = newHash512;
         } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | IllegalBlockSizeException
-                | InvalidKeySpecException | InvalidKeyException | BadPaddingException | NoSuchProviderException e) {
+                | InvalidKeySpecException | InvalidKeyException | BadPaddingException | NoSuchProviderException | IOException e) {
             Logger.error("Caught error during pass-change!");
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "An error has occurred while changing the password!").show();
