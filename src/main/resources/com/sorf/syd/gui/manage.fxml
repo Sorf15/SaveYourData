@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" styleClass="parent-color" stylesheets="@FXMLControllers/manage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.ContManage">
    <children>
-      <VBox fx:id="mainVBox" alignment="CENTER" layoutX="103.0" layoutY="116.0" spacing="30.0" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="116.0">
+      <VBox fx:id="mainVBox" alignment="CENTER" spacing="30.0">
          <children>
             <HBox VBox.vgrow="NEVER">
                <children>

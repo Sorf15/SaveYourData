@@ -4,6 +4,7 @@ import com.sorf.syd.Main;
 import com.sorf.syd.crypto.ECCCipher;
 import com.sorf.syd.util.Logger;
 import org.bouncycastle.crypto.prng.FixedSecureRandom;
+import org.bouncycastle.jcajce.provider.util.BadBlockException;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -190,7 +191,6 @@ public class FileManager {
         try {
             valid = new String(ECCCipher.getInstance().decrypt(login, this.privateKey, null));
         } catch (IllegalBlockSizeException | BadPaddingException | InvalidKeyException e) {
-            e.printStackTrace();
             Logger.error("2");
             this.valid = false;
             return false;

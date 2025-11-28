@@ -4,6 +4,7 @@
 
 .button {
 	-fx-background-radius: 10;
+	-fx-cursor: hand;
 }
 
 #hidePassButton {
@@ -42,6 +43,7 @@
 }
 
 .check-box .box {
+    -fx-cursor: hand;
 	-fx-background-color: #7c81a1;
 }
 

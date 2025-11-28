@@ -39,6 +39,8 @@ public class ContMainScreen extends FXMLController {
     public BorderPane borderPane;
 
     public Button bAccount;
+    public Button bNotification;
+    public Button bPremium;
 
     public ImageView ivHome;
     public ImageView ivManage;
@@ -81,6 +83,10 @@ public class ContMainScreen extends FXMLController {
         bSettings.setTooltip(new Tooltip("Settings"));
         bWiFi.setTooltip(new Tooltip("WiFi Passwords"));
         bDocs.setTooltip(new Tooltip("Important Docs"));
+
+        bNotification.setTooltip(new Tooltip("Not implemented"));
+        bPremium.setTooltip(new Tooltip("Not implemented"));
+        bAccount.setTooltip(new Tooltip("Manage Account"));
 
 //        bMoreInfo.setTooltip(new Tooltip("TEXT"));
 
@@ -128,29 +134,26 @@ public class ContMainScreen extends FXMLController {
                 });
                 switch (event.state) {
                     case HOME -> Platform.runLater(() -> {
-                        rightBP.getChildren().add(MainController.mHome);
-                        BorderPane.setAlignment(MainController.mHome, Pos.CENTER);
+                        rightBP.setCenter(MainController.mHome);
 
                         bHome.pseudoClassStateChanged(SELECTED_CLASS, true);
                         applyColorAdjust((ColorAdjust) ivHome.getEffect(), Color.rgb(255,255,255));
                     });
                     case MANAGE -> Platform.runLater(() -> {
-                        rightBP.getChildren().add(MainController.mManage);
-                        BorderPane.setAlignment(MainController.mManage, Pos.CENTER);
+                        rightBP.setCenter(MainController.mManage);
 
                         bManage.pseudoClassStateChanged(SELECTED_CLASS, true);
                         applyColorAdjust((ColorAdjust) ivManage.getEffect(), Color.rgb(255,255,255));
                     });
                     case GENERATOR -> Platform.runLater(() -> {
-                        rightBP.getChildren().add(MainController.mGenerator);
-                        BorderPane.setAlignment(MainController.mGenerator, Pos.CENTER);
+                        rightBP.setCenter(MainController.mGenerator);
 
                         bGenerator.pseudoClassStateChanged(SELECTED_CLASS, true);
                         applyColorAdjust((ColorAdjust) ivGenerator.getEffect(), Color.rgb(255,255,255));
                     });
                     case SETTINGS -> Platform.runLater(() -> {
-//                        rightBP.getChildren().add(MainController.lorem);
-//                        BorderPane.setAlignment(MainController.lorem, Pos.CENTER);
+                        rightBP.setCenter(MainController.lorem);
+
                         bSettings.pseudoClassStateChanged(SELECTED_CLASS, true);
                         applyColorAdjust((ColorAdjust) ivSettings.getEffect(), Color.rgb(255,255,255));
                     });
@@ -181,7 +184,7 @@ public class ContMainScreen extends FXMLController {
 
         });
         ContextMenu contextMenu = new ContextMenu(item2, item1);
-        contextMenu.show(bAccount, Side.RIGHT, 0,0);
+        contextMenu.show(bAccount, Side.BOTTOM, 0,0);
     }
 
 //    @FXML

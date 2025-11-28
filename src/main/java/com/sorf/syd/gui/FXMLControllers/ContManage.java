@@ -178,6 +178,7 @@ public class ContManage extends FXMLController{
         })));
     }
 
+    //TODO: Confirm Delete
     @FXML
     public void bDel() {
         List<UUID> passToDel = selectedPass.stream().map(ShadowPassword::getUuid).toList();
