@@ -67,24 +67,17 @@ public class ContSignIn extends FXMLController {
 
     @FXML
     public void buttonSignInClicked() throws ConfigurationException {
-        if (tfLogIn.getText().isBlank() || passwordField.getText().isBlank()) {
-            lWrongInput.setText("Wrong login or password!");
-            lWrongInput.setVisible(true);
-        } else if (passwordField.getText().length() > 64 || tfLogIn.getText().length() > 64) {
-            lWrongInput.setText("Login or password can not be longer than 64 symbols!");
-            lWrongInput.setVisible(true);
-        } else if (tfLogIn.getText().contains(" ") || passwordField.getText().contains(" ")) {
-            lWrongInput.setText("Login or password contains forbidden symbols!");
-            lWrongInput.setVisible(true);
-        } else {
-            boolean b = checkbox.isSelected();
-            Config.write("keep_signed_in", b);
-            Config.write("keep_signed_in", b);
+        try {
+            validateString(tfLogIn.getText());
+            validateString(passwordField.getText());
 
             Main.addScheduledTask(() -> Main.handleUserSignIn(tfLogIn.getText(), passwordField.getText()));
-            //super.addToQueue(new Pair<String, Object>("User", new String[]{tfLogIn.getText(), passwordField.getText()}));
             lWrongInput.setVisible(false);
             clearFields();
+            Config.write("keep_signed_in", checkbox.isSelected());
+        } catch (IllegalStateException e) {
+            lWrongInput.setText(e.getMessage());
+            lWrongInput.setVisible(true);
         }
     }
 

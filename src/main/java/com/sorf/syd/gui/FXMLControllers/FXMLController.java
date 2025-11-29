@@ -33,5 +33,12 @@ public abstract class FXMLController {
         return targetStart + (targetStop - targetStart) * ((value - start) / (stop - start));
     }
 
+    protected static void validateString(String s) throws IllegalStateException{
+        if (s.isBlank()) throw new IllegalStateException("Field is empty");
+        if (s.length() < 8) throw new IllegalStateException("Field is too short. The minimum length is 8 characters");
+        if (s.length() > 64) throw new IllegalStateException("Field is too long. The maximum length is 64 characters");
+        if (!s.matches("\\w+")) throw new IllegalStateException("Field contains illegal characters. Only latin upper-case and lower-case, numbers are allowed");
+    }
+
 
 }

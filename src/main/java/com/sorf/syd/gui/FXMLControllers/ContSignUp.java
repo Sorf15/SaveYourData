@@ -20,26 +20,7 @@ import javafx.util.Pair;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
 public class ContSignUp extends FXMLController {
-//    public Scene scene;
-//    public AnchorPane anchorpane;
-//    public VBox vbox;
-//    public Label lSignUp;
-//    public Label lLogin;
-//    public TextField tfLogIn;
-//    public Label lPassword;
-//    public PasswordField passwordField;
-//    public PasswordField passwordField1;
-//    public Label lPassword1;
-//    public GridPane gridpane;
-//    public HBox hbox;
-//    public HBox hbox1;
-//    public Label lHasAcc;
-//    public Button buttonSignIn;
-//    public Button buttonSignUp;
-//    public RadioButton radiobutton;
-//    public Label lWrongInput;
-//    public HBox hbox2;
-    
+
     public Button actionButton;
     public Button switchScreen;
     public CheckBox checkbox;
@@ -74,25 +55,22 @@ public class ContSignUp extends FXMLController {
 
     @FXML
     public void actionButton() throws ConfigurationException {
-        if (tfLogIn.getText().isBlank() || passwordField.getText().isBlank() || passwordField1.getText().isBlank()) {
-            lWrongInput.setText("Login or Password fields can not be empty");
-            lWrongInput.setVisible(true);
-        }  else if (passwordField.getText().length() > 64 || tfLogIn.getText().length() > 64) {
-            lWrongInput.setText("Login or password can not be longer than 64 symbols!");
-            lWrongInput.setVisible(true);
-        } else if (tfLogIn.getText().contains(" ") || passwordField.getText().contains(" ")) {//TODO: redo checks for invalid characters
-            lWrongInput.setText("Login or password contains forbidden symbols!");
-            lWrongInput.setVisible(true);
-        } else if (!passwordField.getText().equals(passwordField1.getText())) {
-            lWrongInput.setText("Passwords do not match!");
-            lWrongInput.setVisible(true);
-        } else {
-            Config.write("keep_signed_in", checkbox.isSelected());
+        try {
+            validateString(tfLogIn.getText());
+            validateString(passwordField.getText());
+            if (!passwordField.getText().equals(passwordField1.getText())) {
+                lWrongInput.setText("Passwords do not match!");
+                lWrongInput.setVisible(true);
+                return;
+            }
 
             Main.addScheduledTask(() -> Main.handleNewUser(tfLogIn.getText(), passwordField.getText()));
-            //super.addToQueue(new Pair<String, Object>("newUser", new String[]{tfLogIn.getText(), passwordField.getText()}));
             lWrongInput.setVisible(false);
             clearFields();
+            Config.write("keep_signed_in", checkbox.isSelected());
+        } catch (IllegalStateException e) {
+            lWrongInput.setText(e.getMessage());
+            lWrongInput.setVisible(true);
         }
     }
 
