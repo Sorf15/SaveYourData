@@ -5,18 +5,20 @@ import com.sorf.syd.gui.MainController;
 import com.sorf.syd.gui.ShadowPassword;
 import com.sorf.syd.gui.dialog.DialogAddPass;
 import com.sorf.syd.gui.dialog.DialogEditPass;
-import com.sorf.syd.util.Logger;
+import com.sorf.syd.gui.skins.VisiblePasswordFieldSkin;
 import com.sorf.syd.util.event.EventListener;
 import com.sorf.syd.util.event.PasswordEvent;
 import com.sorf.syd.util.event.UpdateScreenEvent;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.SVGPath;
 import javafx.util.Callback;
 
 import java.nio.charset.StandardCharsets;
@@ -55,15 +57,24 @@ public class ContHome extends FXMLController{
             @Override
             public TableCell<ShadowPassword, Void> call(TableColumn<ShadowPassword, Void> shadowPasswordVoidTableColumn) {
                 return new TableCell<>() {
-                    private final Button btn = new Button("SEX");
+                    private final SVGPath actionIcon = new SVGPath();
+                    private final Button btn = new Button("");
 
                     {
+
+                        btn.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                        btn.setFocusTraversable(false);
+                        btn.setScaleX(0.7D);
+                        btn.setScaleY(0.7D);
+                        btn.setScaleZ(0.7D);
+                        actionIcon.setContent(VisiblePasswordFieldSkin.Icons.VIEWER.getContent());
+                        btn.setGraphic(actionIcon);
                         btn.setOnAction((ActionEvent event) -> {
                             ShadowPassword data = getTableView().getItems().get(getIndex());
                             if (data.isPassShown()) {
-                                 data.setPassShown(false);
-                                 data.setPass("********");
-                                 tvPassword.refresh();
+                                data.setPassShown(false);
+                                data.setPass("********");
+                                tvPassword.refresh();
                             } else {
                                 Main.EVENT_BUS.fire(new PasswordEvent(data, bytes -> Platform.runLater(() ->
                                         ((ContHome) MainController.controllers.get("mHome")).setPass(data, new String(bytes, StandardCharsets.UTF_16BE)))));

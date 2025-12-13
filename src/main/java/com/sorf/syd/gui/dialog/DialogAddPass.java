@@ -24,9 +24,10 @@ public class DialogAddPass extends Dialog<ShadowPassword> {
         Callback<ButtonType, ShadowPassword> callbackConverter = buttonType -> {
             if (buttonType == ButtonType.OK) {
                 Main.addScheduledTask(() -> {
+                    //TODo: check for desync between threads
                     DialAddPass controller = (DialAddPass) MainController.controllers.get("dAddPass");
-                    Main.addPasswordToStorage(controller.tfName.getText(), controller.tfLogin.getText(), controller.passwordField.getText());
-                    ((DialAddPass) MainController.controllers.get("dAddPass")).clearFields();
+                    Main.addPasswordToStorage(controller.tfName.getText(), controller.tfLogin.getText(), controller.passwordField.getText()); //and here
+                    controller.clearFields(); //here
                 });
             }
             return null;

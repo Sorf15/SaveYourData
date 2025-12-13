@@ -182,7 +182,7 @@ public class Main {
     }
 
     public static void handleUserSignIn(String username, String password) {
-        if (username.isBlank() && password.isBlank()) {
+        if (username.isBlank() || password.isBlank()) {
             return;
         }
         try {

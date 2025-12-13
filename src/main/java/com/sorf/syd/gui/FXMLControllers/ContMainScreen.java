@@ -73,7 +73,7 @@ public class ContMainScreen extends FXMLController {
         disableSelected();
 
         ivNotification.setEffect(new ColorAdjust());
-        applyColorAdjust((ColorAdjust) ivNotification.getEffect(), Color.rgb(162,165,175));
+        applyColorAdjust((ColorAdjust) ivNotification.getEffect(), Color.rgb(56, 60, 84));
 
 
         //TODO add tooltip to all
@@ -116,12 +116,12 @@ public class ContMainScreen extends FXMLController {
         bSettings.pseudoClassStateChanged(SELECTED_CLASS, false);
         bWiFi.pseudoClassStateChanged(SELECTED_CLASS, false);
         bDocs.pseudoClassStateChanged(SELECTED_CLASS, false);
-        applyColorAdjust((ColorAdjust) ivHome.getEffect(), Color.rgb(123,127,140));
-        applyColorAdjust((ColorAdjust) ivGenerator.getEffect(), Color.rgb(123,127,140));
-        applyColorAdjust((ColorAdjust) ivManage.getEffect(), Color.rgb(123,127,140));
-        applyColorAdjust((ColorAdjust) ivSettings.getEffect(), Color.rgb(123,127,140));
-        applyColorAdjust((ColorAdjust) ivWiFi.getEffect(), Color.rgb(123,127,140));
-        applyColorAdjust((ColorAdjust) ivDocs.getEffect(), Color.rgb(123,127,140));
+        applyColorAdjust((ColorAdjust) ivHome.getEffect(), Color.rgb(56, 60, 84));
+        applyColorAdjust((ColorAdjust) ivGenerator.getEffect(), Color.rgb(56, 60, 84));
+        applyColorAdjust((ColorAdjust) ivManage.getEffect(), Color.rgb(56, 60, 84));
+        applyColorAdjust((ColorAdjust) ivSettings.getEffect(), Color.rgb(56, 60, 84));
+        applyColorAdjust((ColorAdjust) ivWiFi.getEffect(), Color.rgb(56, 60, 84));
+        applyColorAdjust((ColorAdjust) ivDocs.getEffect(), Color.rgb(56, 60, 84));
     }
 
     @EventListener
@@ -137,33 +137,34 @@ public class ContMainScreen extends FXMLController {
                         rightBP.setCenter(MainController.mHome);
 
                         bHome.pseudoClassStateChanged(SELECTED_CLASS, true);
-                        applyColorAdjust((ColorAdjust) ivHome.getEffect(), Color.rgb(255,255,255));
+                        applyColorAdjust((ColorAdjust) ivHome.getEffect(), Color.rgb(235, 235, 245));
                     });
                     case MANAGE -> Platform.runLater(() -> {
                         rightBP.setCenter(MainController.mManage);
 
                         bManage.pseudoClassStateChanged(SELECTED_CLASS, true);
-                        applyColorAdjust((ColorAdjust) ivManage.getEffect(), Color.rgb(255,255,255));
+                        applyColorAdjust((ColorAdjust) ivManage.getEffect(), Color.rgb(235, 235, 245));
                     });
                     case GENERATOR -> Platform.runLater(() -> {
                         rightBP.setCenter(MainController.mGenerator);
 
                         bGenerator.pseudoClassStateChanged(SELECTED_CLASS, true);
-                        applyColorAdjust((ColorAdjust) ivGenerator.getEffect(), Color.rgb(255,255,255));
+                        applyColorAdjust((ColorAdjust) ivGenerator.getEffect(), Color.rgb(235, 235, 245));
                     });
                     case SETTINGS -> Platform.runLater(() -> {
-                        rightBP.setCenter(MainController.lorem);
-
+                        rightBP.setCenter(null);
                         bSettings.pseudoClassStateChanged(SELECTED_CLASS, true);
-                        applyColorAdjust((ColorAdjust) ivSettings.getEffect(), Color.rgb(255,255,255));
+                        applyColorAdjust((ColorAdjust) ivSettings.getEffect(), Color.rgb(235, 235, 245));
                     });
                     case WIFI -> Platform.runLater(() -> {
+                        rightBP.setCenter(null);
                         bWiFi.pseudoClassStateChanged(SELECTED_CLASS, true);
-                        applyColorAdjust((ColorAdjust) ivWiFi.getEffect(), Color.rgb(255,255,255));
+                        applyColorAdjust((ColorAdjust) ivWiFi.getEffect(), Color.rgb(235, 235, 245));
                     });
                     case DOCS -> Platform.runLater(() -> {
+                        rightBP.setCenter(MainController.lorem);
                         bDocs.pseudoClassStateChanged(SELECTED_CLASS, true);
-                        applyColorAdjust((ColorAdjust) ivDocs.getEffect(), Color.rgb(255,255,255));
+                        applyColorAdjust((ColorAdjust) ivDocs.getEffect(), Color.rgb(235, 235, 245));
                     });
                 }
             }
@@ -186,42 +187,6 @@ public class ContMainScreen extends FXMLController {
         ContextMenu contextMenu = new ContextMenu(item2, item1);
         contextMenu.show(bAccount, Side.BOTTOM, 0,0);
     }
-
-//    @FXML
-//    public void bMoreInfo() {
-//        if (isDividerWide) {
-//            sp.setDividerPosition(0, 0.0847D);
-//            isDividerWide = false;
-//            for (int i = 0; i < hboxes.size(); i++) {
-//                HBox hBox = hboxes.get(i);
-//                hBox.setVisible(false);
-//                hBox.setPadding(new Insets(0, -30, 0, 20));
-//                hboxes1.get(i).getChildren().remove(hBox);
-//                hboxes1.get(i).setPadding(new Insets(0));
-//            }
-//            HBox.setMargin(ivAccount, new Insets(0,0,0,0));
-//
-////            bMoreInfo.setText("");
-//
-//
-////            hbox1.setVisible(false);
-////            hbox1.setPadding(new Insets(0, -10, 0 ,0));
-//        } else {
-//            sp.setDividerPosition(0, 0.25D);
-//            isDividerWide = true;
-//            for (int i = 0; i < hboxes.size(); i++) {
-//                HBox hBox = hboxes.get(i);
-//                hBox.setVisible(true);
-//                hBox.setPadding(new Insets(0, 0, 0, 0));
-//                hboxes1.get(i).getChildren().add(hBox);
-//                hboxes1.get(i).setPadding(new Insets(0, 0, 0 , 10));
-//            }
-////            bMoreInfo.setText("Collapse");
-////            hbox1.setVisible(true);
-////            hbox1.setPadding(new Insets(0));
-//            HBox.setMargin(ivAccount, new Insets(0,0,0,30));
-//        }
-//    }
 
     @FXML
     public void bHome() {

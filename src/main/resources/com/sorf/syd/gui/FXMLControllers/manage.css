@@ -1,8 +1,121 @@
 .background {
-	-fx-background-color: #3f3f61;
-	-fx-background-radius: 10;
+	-fx-background-color: #212336;
+	-fx-background-radius: 12;
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.0, 0, 4);
 }
 
 .parent-color {
-	-fx-background-color: #212336;
+	-fx-background-color: #1A1C29;
+}
+
+.check-box {
+	-fx-text-fill: #EBEBF5;
+	-fx-cursor: hand;
+}
+
+.check-box .box {
+	-fx-background-color: -fx-shadow-highlight-color, #EBEBF5;
+	-fx-background-radius: 7;
+}
+
+.check-box:selected .box {
+	-fx-background-color: #5C6BC0;
+	-fx-background-radius: 7;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #989BB0;
+}
+
+.button {
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.0, 0, 4);
+	-fx-background-color: #5C6BC0;
+	-fx-background-radius: 7;
+	-fx-text-fill: #FFFFFF;
+	-fx-cursor: hand;
+}
+
+.button:hover {
+	-fx-background-color: #6F7DCE;
+}
+
+.button:pressed {
+	-fx-background-color: #4956A0;
+}
+
+.table-view {
+	-fx-background-color: -fx-shadow-highlight-color, #d9d9fc;
+	-fx-background-radius: 7;
+}
+
+.table-view {
+    -fx-background-color: #212336;
+	-fx-background-radius: 12;
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.0, 0, 4);
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #151722;
+	-fx-background-radius: 12 12 0 0;
+}
+
+.table-view .column-header {
+	-fx-text-background-color: #989BB0;
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+	-fx-border-color: transparent;
+}
+.table-row-cell {
+	-fx-text-background-color: #EBEBF5;
+	-fx-border-width: 0 0 1px 0;
+	-fx-border-color: #232536;
+	-fx-border-style: solid;
+}
+
+
+.table-row-cell:odd {
+    -fx-background-color: #212336;
+}
+.table-row-cell:even {
+    -fx-background-color: #1D1F2E;
+}
+
+.table-row-cell:hover,
+.table-row-cell:odd:hover,
+.table-row-cell:even:hover {
+    -fx-background-color: #2A2D42;
+}
+
+.table-row-cell:selected,
+.table-row-cell:odd:selected,
+.table-row-cell:even:selected {
+	-fx-background-color: #2C314E;
+	-fx-text-background-color: #FFFFFF;
+	-fx-font-weight: bold;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  #1A1C29;
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  #1A1C29;
 }

@@ -17,7 +17,7 @@
    <children>
       <VBox alignment="TOP_CENTER" layoutX="259.0" layoutY="124.0" spacing="20.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Password Generator" textAlignment="CENTER" textFill="#c3c0c0">
+            <Label text="Password Generator" textAlignment="CENTER" textFill="#989bb0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -26,7 +26,7 @@
                <children>
                   <VBox alignment="CENTER" styleClass="background">
                      <children>
-                        <Label text="Password Length" textFill="#c3c0c0">
+                        <Label text="Password Length" textFill="#ebebf5">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -34,7 +34,7 @@
                         <HBox alignment="CENTER_LEFT">
                            <children>
                               <Slider fx:id="slider" blockIncrement="1.0" majorTickUnit="1.0" max="32.0" min="1.0" minorTickCount="1" prefHeight="25.0" value="16.0" />
-                              <Label fx:id="lSliderValue" maxWidth="30.0" minWidth="30.0" text="16" textFill="#c3c0c0">
+                              <Label fx:id="lSliderValue" maxWidth="30.0" minWidth="30.0" text="16" textFill="#ebebf5">
                                  <font>
                                     <Font size="16.0" />
                                  </font>

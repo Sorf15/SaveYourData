@@ -9,22 +9,22 @@
 
 
 #bSide:focused {
-   -fx-border-color: #a6a6a6;
+   -fx-border-color: #5C6BC0;
    -fx-border-width: 2;
    -fx-border-radius: 15;
 }
 
 #bSide:hover {
-   -fx-background-color: #2c2d4d;
+   -fx-background-color: #454A66;
    -fx-background-radius: 15;
 }
 
 #bSide:pressed {
-   -fx-background-color: #52537a;
+   -fx-background-color: #595a85;
 }
 
 #bSide:selected {
-   -fx-background-color: #3e64ff;
+   -fx-background-color: #5C6BC0;
    -fx-background-radius: 15;
 }
 
@@ -43,44 +43,32 @@
 }
 
 #bNotification:hover {
-   -fx-background-color: rgb(60,60,80);
+   -fx-background-color: #454A66;
    -fx-background-radius: 30;
 }
 
 #bNotification:pressed {
-   -fx-background-color: rgb(100,100,140);
+   -fx-background-color: #5C6BC0;
    -fx-background-radius: 30;
 }
 
 #bPremium {
-   -fx-background-color: rgb(62,100,255);
+   -fx-background-color: #5C6BC0;
    -fx-background-radius: 30;
 }
 
 #bPremium:hover {
-   -fx-background-color: rgb(51,90,195);
+   -fx-background-color: #454A66;
    -fx-background-radius: 30;
 }
 
 #bPremium:pressed {
-   -fx-background-color: rgb(78,108,186);
+   -fx-background-color: #5C6BC0;
    -fx-background-radius: 30;
 }
 
-/*#bMoreInfo:focused {
-   -fx-border-color: #a6a6a6;
-   -fx-border-width: 2;
-   -fx-border-radius: 10;
-}*/
-
-/** {
-   -fx-border-style: dotted;
-   -fx-border-radius: 4;
-   fx-border-color: #ffffff;
-}*/
-
 #borderPane {
-   -fx-background-color: #161d34;
+   -fx-background-color: #212336;
 }
 
 #rightAP {

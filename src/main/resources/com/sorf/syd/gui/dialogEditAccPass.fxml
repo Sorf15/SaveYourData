@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane fx:id="dialogPane" expanded="true" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.DialEditAccPass">
+<DialogPane fx:id="dialogPane" expanded="true" stylesheets="@FXMLControllers/dialog.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.DialEditAccPass">
    <content>
       <VBox fx:id="vBox" alignment="CENTER" prefWidth="350.0">
          <children>

@@ -17,7 +17,7 @@
                 <TableColumn fx:id="tcName" editable="false" prefWidth="100.0" text="Name" />
                   <TableColumn fx:id="tcLogin" editable="false" prefWidth="125.0" text="Login" />
                   <TableColumn fx:id="tcPassword" editable="false" prefWidth="200.0" text="Password" />
-                  <TableColumn fx:id="tcAction" editable="false" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" resizable="false" sortable="false" />
+                  <TableColumn fx:id="tcAction" editable="false" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" />
               </columns>
             </TableView>
             <VBox fx:id="mainVBox" alignment="CENTER" spacing="30.0">

@@ -13,7 +13,7 @@
 
 <Scene fx:id="scene" stylesheets="@FXMLControllers/mainapp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.ContMainScreen">
    <root>
-      <SplitPane fx:id="sp" dividerPositions="0.075" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #212336;">
+      <SplitPane fx:id="sp" dividerPositions="0.075" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1A1C29;">
         <items>
             <BorderPane fx:id="borderPane">
                <top>

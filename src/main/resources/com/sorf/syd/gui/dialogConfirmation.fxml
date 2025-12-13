@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane fx:id="dialogPane" expanded="true" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.DialConfirmation">
+<DialogPane fx:id="dialogPane" stylesheets="@FXMLControllers/dialog.css" expanded="true" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sorf.syd.gui.FXMLControllers.DialConfirmation">
    <buttonTypes>
       <ButtonType fx:constant="NO" />
       <ButtonType fx:constant="YES" />

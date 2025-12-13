@@ -63,11 +63,17 @@ public class ContSignUp extends FXMLController {
                 lWrongInput.setVisible(true);
                 return;
             }
-
-            Main.addScheduledTask(() -> Main.handleNewUser(tfLogIn.getText(), passwordField.getText()));
+            String login = tfLogIn.getText(), pass = passwordField.getText();
+            boolean state = checkbox.isSelected();
+            Main.addScheduledTask(() -> {
+                try {
+                    Config.write("keep_signed_in", state);
+                } catch (ConfigurationException e) {
+                    e.printStackTrace();
+                }
+                Main.handleNewUser(login, pass);});
             lWrongInput.setVisible(false);
             clearFields();
-            Config.write("keep_signed_in", checkbox.isSelected());
         } catch (IllegalStateException e) {
             lWrongInput.setText(e.getMessage());
             lWrongInput.setVisible(true);

@@ -28,45 +28,6 @@ public class ContGenerator extends FXMLController {
 
     private static boolean initialized = false;
 
-    /*{
-        Main.EVENT_BUS.register(this);
-        AsyncTask.getInstance().invoke(() -> {
-            while (lSliderValue == null || slider == null || tableView == null ||
-                    tbcDate == null || tbcPassword == null) {
-                Thread.onSpinWait();
-            }
-            slider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                PasswordGenerator.setPasswordLength(newValue.intValue());
-                lSliderValue.setText(String.valueOf(PasswordGenerator.getPasswordLength()));
-            });
-
-            cbLowerCase.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                if (!PasswordGenerator.setLowerCase(cbLowerCase.isSelected())) {
-                    cbLowerCase.setSelected(true);
-                }
-            });
-
-            cbUpperCase.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                if (!PasswordGenerator.setUpperCase(cbUpperCase.isSelected())) {
-                    cbLowerCase.setSelected(true);
-                }
-            });
-
-            cbNumbers.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                if (!PasswordGenerator.setNumbers(cbNumbers.isSelected())) {
-                    cbLowerCase.setSelected(true);
-                }
-            });
-
-            initialized = true;
-
-            tableViewSelectionModel = tableView.getSelectionModel();
-            tableView.setPlaceholder(new Label("Passwords have not been generated"));
-            tbcDate.setCellValueFactory(new PropertyValueFactory<>("timestamp"));
-            tbcPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
-        });
-    }*/
-
     public static Boolean isInitialized() {
         return initialized;
 

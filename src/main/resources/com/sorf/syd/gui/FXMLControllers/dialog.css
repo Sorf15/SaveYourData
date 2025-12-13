@@ -1,0 +1,54 @@
+.dialog-pane {
+	-fx-background-color: #212336;
+	-fx-text-fill: #EBEBF5;
+}
+
+.label {
+	-fx-background-color: #151722;
+	-fx-text-fill: #EBEBF5;
+}
+
+.choice-box {
+	-fx-background-color: -fx-shadow-highlight-color, #EBEBF5;
+	-fx-background-radius: 7;
+	-fx-text-fill: #5C6BC0;
+}
+
+.choice-box .arrow {
+	-fx-background-color: #7B7F8C;	
+}
+
+.button {
+	-fx-background-color: #5C6BC0;
+	-fx-background-radius: 7;
+	-fx-text-fill: #FFFFFF;
+	-fx-cursor: hand;
+}
+
+.button:hover {
+	-fx-background-color: #6F7DCE;
+}
+
+.button:pressed {
+	-fx-background-color: #4956A0;
+}
+
+
+.check-box {
+	-fx-text-fill: #EBEBF5;
+	-fx-cursor: hand;
+}
+
+.check-box .box {
+	-fx-background-color: -fx-shadow-highlight-color, #EBEBF5;
+	-fx-background-radius: 7;
+}
+
+.check-box:selected .box {
+	-fx-background-color: #5C6BC0;
+	-fx-background-radius: 7;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #989BB0;
+}

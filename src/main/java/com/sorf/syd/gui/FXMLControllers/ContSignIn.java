@@ -1,7 +1,6 @@
 package com.sorf.syd.gui.FXMLControllers;
 
 import com.sorf.syd.Main;
-import com.sorf.syd.gui.skins.CustomTextFieldSkin;
 import com.sorf.syd.gui.skins.VisiblePasswordFieldSkin;
 import com.sorf.syd.util.Config;
 import com.sorf.syd.util.event.ChangeSceneEvent;
@@ -68,13 +67,17 @@ public class ContSignIn extends FXMLController {
     @FXML
     public void buttonSignInClicked() throws ConfigurationException {
         try {
-            validateString(tfLogIn.getText());
-            validateString(passwordField.getText());
-
-            Main.addScheduledTask(() -> Main.handleUserSignIn(tfLogIn.getText(), passwordField.getText()));
+            String login = tfLogIn.getText(), pass = passwordField.getText();
+            boolean state = checkbox.isSelected();
+            Main.addScheduledTask(() -> {
+                try {
+                    boolean b=Config.write("keep_signed_in", state);
+                } catch (ConfigurationException e) {
+                    e.printStackTrace();
+                }
+                Main.handleUserSignIn(login, pass);});
             lWrongInput.setVisible(false);
             clearFields();
-            Config.write("keep_signed_in", checkbox.isSelected());
         } catch (IllegalStateException e) {
             lWrongInput.setText(e.getMessage());
             lWrongInput.setVisible(true);
